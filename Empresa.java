@@ -46,13 +46,5 @@ public class Empresa {
         this.nitEmpresa = nitEmpresa;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "empresa{" +
-                "nombreEmpresa='" + nombreEmpresa + '\'' +
-                ", direccionEmpresa='" + direccionEmpresa + '\'' +
-                ", telefonoEmpresa=" + telefonoEmpresa +
-                ", nitEmpresa='" + nitEmpresa + '\'' +
-                '}';
+
     }
-}
