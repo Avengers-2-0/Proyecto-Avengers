@@ -1,3 +1,5 @@
+package Spring2;
+
 public class Empresa {
     public String nombreEmpresa;
     public String direccionEmpresa;
