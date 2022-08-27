@@ -6,16 +6,16 @@ import java.util.ArrayList;
 public class Empleado {
     public String nombreEmpleado;
     public String correoEmpleado;
-    public String empresaEmpleado;
+    public Empresa Empresa;
     public String rolEmpleado;
 
     //String [] rolEmpleado = new String[] {"Administrador","Operativo"};
 
 
-    public Empleado(String nombreEmpleado, String correoEmpleado, String empresaEmpleado, String rolEmpleado) {
+    public Empleado(String nombreEmpleado, String correoEmpleado, Spring2.Empresa empresa, String rolEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
         this.correoEmpleado = correoEmpleado;
-        this.empresaEmpleado = empresaEmpleado;
+        Empresa = empresa;
         this.rolEmpleado = rolEmpleado;
     }
 
@@ -36,12 +36,12 @@ public class Empleado {
         this.correoEmpleado = correoEmpleado;
     }
 
-    public String getEmpresaEmpleado() {
-        return empresaEmpleado;
+    public Spring2.Empresa getEmpresa() {
+        return Empresa;
     }
 
-    public void setEmpresaEmpleado(String empresaEmpleado) {
-        this.empresaEmpleado = empresaEmpleado;
+    public void setEmpresa(Spring2.Empresa empresa) {
+        Empresa = empresa;
     }
 
     public String getRolEmpleado() {
