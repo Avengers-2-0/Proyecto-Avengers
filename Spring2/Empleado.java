@@ -4,14 +4,15 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Empleado {
-    private String nombreEmpleado;
-    private String correoEmpleado;
-    private String empresaEmpleado;
+    public String nombreEmpleado;
+    public String correoEmpleado;
+    public String empresaEmpleado;
+    public String rolEmpleado;
 
-    String [] rolEmpleado = new String[] {"Administrador","Operario"};
+    //String [] rolEmpleado = new String[] {"Administrador","Operativo"};
 
 
-    public Empleado(String nombreEmpleado, String correoEmpleado, String empresaEmpleado, String[] rolEmpleado) {
+    public Empleado(String nombreEmpleado, String correoEmpleado, String empresaEmpleado, String rolEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
         this.correoEmpleado = correoEmpleado;
         this.empresaEmpleado = empresaEmpleado;
@@ -43,11 +44,11 @@ public class Empleado {
         this.empresaEmpleado = empresaEmpleado;
     }
 
-    public String[] getRolEmpleado() {
+    public String getRolEmpleado() {
         return rolEmpleado;
     }
 
-    public void setRolEmpleado(String[] rolEmpleado) {
+    public void setRolEmpleado(String rolEmpleado) {
         this.rolEmpleado = rolEmpleado;
     }
 }

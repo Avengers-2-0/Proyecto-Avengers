@@ -3,12 +3,12 @@ package Spring2;
 public class MovimientoDinero {
    public int montoMovimiento;
     public String conceptoMovimiento;
-    public String usuarioMoviento;
+    public String usuarioMovimiento;
 
-    public MovimientoDinero(int montoMovimiento, String conceptoMovimiento, String usuarioMoviento) {
+    public MovimientoDinero(int montoMovimiento, String conceptoMovimiento, String usuarioMovimiento) {
         this.montoMovimiento = montoMovimiento;
         this.conceptoMovimiento = conceptoMovimiento;
-        this.usuarioMoviento = usuarioMoviento;
+        this.usuarioMovimiento = usuarioMovimiento;
     }
 
     public int getMontoMovimiento() {
@@ -27,12 +27,12 @@ public class MovimientoDinero {
         this.conceptoMovimiento = conceptoMovimiento;
     }
 
-    public String getUsuarioMoviento() {
-        return usuarioMoviento;
+    public String getUsuarioMovimiento() {
+        return usuarioMovimiento;
     }
 
-    public void setUsuarioMoviento(String usuarioMoviento) {
-        this.usuarioMoviento = usuarioMoviento;
+    public void setUsuarioMovimiento(String usuarioMoviento) {
+        this.usuarioMovimiento = usuarioMoviento;
     }
 
 }
