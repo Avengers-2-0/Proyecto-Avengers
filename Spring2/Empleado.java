@@ -1,7 +1,7 @@
 package Spring2;
-<<<<<<< HEAD
+
 import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
 
 public class Empleado {
     private String nombreEmpleado;
@@ -42,8 +42,7 @@ public class Empleado {
     public void setEmpresaEmpleado(String empresaEmpleado) {
         this.empresaEmpleado = empresaEmpleado;
     }
-=======
 
-public class Empleado {
->>>>>>> feb0b96427ee985c8d57688952a3e1269a4b85df
+
+
 }
