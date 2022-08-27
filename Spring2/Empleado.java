@@ -11,11 +11,11 @@ public class Empleado {
     String [] rolEmpleado = new String[] {"Administrador","Operario"};
 
 
-    public Empleado(String nombreEmpleado, String correoEmpleado, String empresaEmpleado) {
+    public Empleado(String nombreEmpleado, String correoEmpleado, String empresaEmpleado, String[] rolEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
         this.correoEmpleado = correoEmpleado;
         this.empresaEmpleado = empresaEmpleado;
-
+        this.rolEmpleado = rolEmpleado;
     }
 
     public String getNombreEmpleado() {
@@ -43,6 +43,11 @@ public class Empleado {
         this.empresaEmpleado = empresaEmpleado;
     }
 
+    public String[] getRolEmpleado() {
+        return rolEmpleado;
+    }
 
-
+    public void setRolEmpleado(String[] rolEmpleado) {
+        this.rolEmpleado = rolEmpleado;
+    }
 }

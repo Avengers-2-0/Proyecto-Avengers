@@ -3,11 +3,11 @@ package Spring2;
 public class Empresa {
     public String nombreEmpresa;
     public String direccionEmpresa;
-    public int telefonoEmpresa;
+    public double telefonoEmpresa;
     public String nitEmpresa;
 
 
-    public Empresa(String nombreEmpresa, String direccionEmpresa, int telefonoEmpresa, String nitEmpresa) {
+    public Empresa(String nombreEmpresa, String direccionEmpresa, double telefonoEmpresa, String nitEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
         this.direccionEmpresa = direccionEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
@@ -32,11 +32,11 @@ public class Empresa {
         this.direccionEmpresa = direccionEmpresa;
     }
 
-    public int getTelefonoEmpresa() {
+    public double getTelefonoEmpresa() {
         return telefonoEmpresa;
     }
 
-    public void setTelefonoEmpresa(int telefonoEmpresa) {
+    public void setTelefonoEmpresa(double telefonoEmpresa) {
         this.telefonoEmpresa = telefonoEmpresa;
     }
 
