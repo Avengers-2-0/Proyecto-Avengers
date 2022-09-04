@@ -1,4 +1,4 @@
-package Spring2;
+package src.main.java.com.example.Spring3;
 
 public class MovimientoDinero {
    public int montoMovimiento;
