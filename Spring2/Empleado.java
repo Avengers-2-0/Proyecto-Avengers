@@ -1,14 +1,15 @@
 package com.example.Spring3;
 
 public class Empleado {
-    private final Empresa Empresa;
     public String nombreEmpleado;
     public String correoEmpleado;
-    public Empresa empresa;
+    public src.main.java.com.example.Spring3.Empresa Empresa;
     public String rolEmpleado;
 
+    //String [] rolEmpleado = new String[] {"Administrador","Operativo"};
 
-    public Empleado(String nombreEmpleado, String correoEmpleado, Empresa empresa, String rolEmpleado) {
+
+    public Empleado(String nombreEmpleado, String correoEmpleado, src.main.java.com.example.Spring3.Empresa empresa, String rolEmpleado) {
         this.nombreEmpleado = nombreEmpleado;
         this.correoEmpleado = correoEmpleado;
         Empresa = empresa;
