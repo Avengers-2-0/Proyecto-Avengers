@@ -1,4 +1,4 @@
-package com.example.Spring3;
+package Entidades;
 
 public class Main {
     public static void main(String[] args) {

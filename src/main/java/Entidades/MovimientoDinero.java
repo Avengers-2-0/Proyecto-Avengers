@@ -1,4 +1,4 @@
-package com.example.Spring3;
+package Entidades;
 
 public class MovimientoDinero {
    public int montoMovimiento;

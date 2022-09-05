@@ -1,7 +1,7 @@
-package com.example.Spring3;
+package Entidades;
 
 public class Empleado {
-    private final Empresa Empresa;
+    private Empresa Empresa;
     public String nombreEmpleado;
     public String correoEmpleado;
     public Empresa empresa;
@@ -32,11 +32,11 @@ public class Empleado {
         this.correoEmpleado = correoEmpleado;
     }
 
-    public src.main.java.com.example.Spring3.Empresa getEmpresa() {
+    public Empresa getEmpresa() {
         return Empresa;
     }
 
-    public void setEmpresa(src.main.java.com.example.Spring3.Empresa empresa) {
+    public void setEmpresa(Empresa empresa) {
         Empresa = empresa;
     }
 

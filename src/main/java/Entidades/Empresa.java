@@ -1,10 +1,28 @@
-package com.example.Spring3;
+package Entidades;
 
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Empresa")
 public class Empresa {
-    public String nombreEmpresa;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name="nombreEmpresa")
+    private String nombreEmpresa;
+
+    @Column(name = "direcciónEmpresa")
     public String direccionEmpresa;
+    @Column(name = "telefonoEmpresa")
     public long telefonoEmpresa;
+
+    @Column(name = "nitEmpresa")
     public String nitEmpresa;
+
+    public Empresa() {
+    }
 
 
     public Empresa(String nombreEmpresa, String direccionEmpresa, long telefonoEmpresa, String nitEmpresa) {
@@ -46,6 +64,14 @@ public class Empresa {
 
     public void setNitEmpresa(String nitEmpresa) {
         this.nitEmpresa = nitEmpresa;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 
