@@ -1,14 +1,38 @@
 package Entidades;
 
-public class MovimientoDinero {
-   public int montoMovimiento;
-    public String conceptoMovimiento;
-    public String usuarioMovimiento;
 
-    public MovimientoDinero(int montoMovimiento, String conceptoMovimiento, String usuarioMovimiento) {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "MovimientoDinero")
+public class MovimientoDinero {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public long id;
+    @Column(name = "montoMovimiento")
+    public int montoMovimiento;
+    @Column(name = "conceptoMovimiento")
+    public String conceptoMovimiento;
+
+    @ManyToOne
+    @JoinColumn(name = "empleado_id")
+    public Empleado empleado;
+
+    public MovimientoDinero() {
+    }
+
+    public MovimientoDinero(int montoMovimiento, String conceptoMovimiento, Empleado empleado) {
         this.montoMovimiento = montoMovimiento;
         this.conceptoMovimiento = conceptoMovimiento;
-        this.usuarioMovimiento = usuarioMovimiento;
+        this.empleado = empleado;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public int getMontoMovimiento() {
@@ -27,12 +51,11 @@ public class MovimientoDinero {
         this.conceptoMovimiento = conceptoMovimiento;
     }
 
-    public String getUsuarioMovimiento() {
-        return usuarioMovimiento;
+    public Empleado getEmpleado() {
+        return empleado;
     }
 
-    public void setUsuarioMovimiento(String usuarioMoviento) {
-        this.usuarioMovimiento = usuarioMoviento;
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
-
 }

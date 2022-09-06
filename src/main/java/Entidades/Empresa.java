@@ -2,74 +2,83 @@ package Entidades;
 
 
 import javax.persistence.*;
-import java.io.Serializable;
+import java.util.Date;
 
 @Entity
-@Table(name = "Empresa", uniqueConstraints = {
-        @UniqueConstraint(name = "uc_empresa_telefonoempresa", columnNames = {"telefonoEmpresa"})
-})
-public class Empresa implements Serializable {
+@Table(name = "Empresa")
+
+public class Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name = "nit")
+    private String nit;
+    @Column(name = "nombre", unique = true)
+    private String nombre;
+    @Column(name = "dirección")
+    private String direccion;
+    @Column(name = "telefono")
+    private long telefono;
 
-    @Column(name="nombreEmpresa")
-    private String nombreEmpresa;
+    private Date createAt;
 
-    @Column(name = "direcciónEmpresa")
-    public String direccionEmpresa;
-    @Column(name = "telefonoEmpresa")
-    public long telefonoEmpresa;
+    private Date updateAt;
 
-    @Column(name = "nitEmpresa")
-    public String nitEmpresa;
 
+//    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+//    private ArrayList<Empleado> empleados;
+
+    //    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
+//    private ArrayList<MovimientoDinero>movimientoDineros;
     public Empresa() {
     }
 
-
-    public Empresa(String nombreEmpresa, String direccionEmpresa, long telefonoEmpresa, String nitEmpresa) {
-        this.nombreEmpresa = nombreEmpresa;
-        this.direccionEmpresa = direccionEmpresa;
-        this.telefonoEmpresa = telefonoEmpresa;
-        this.nitEmpresa = nitEmpresa;
-    }
-
-    public String getNombreEmpresa() {
-        return nombreEmpresa;
-    }
-
-    public void setNombreEmpresa(String nombreEmpresa) {
-        this.nombreEmpresa = nombreEmpresa;
-    }
-
-    public String getDireccionEmpresa() {
-        return direccionEmpresa;
-    }
-
-    public void setDireccionEmpresa(String direccionEmpresa) {
-        this.direccionEmpresa = direccionEmpresa;
-    }
-
-    public long getTelefonoEmpresa() {
-        return telefonoEmpresa;
-    }
-
-    public void setTelefonoEmpresa(long telefonoEmpresa) {
-        this.telefonoEmpresa = telefonoEmpresa;
-    }
-
-    public String getNitEmpresa() {
-        return nitEmpresa;
-    }
-
-    public void setNitEmpresa(String nitEmpresa) {
-        this.nitEmpresa = nitEmpresa;
+    public Empresa(Long id, String nit, String nombre, String direccion, long telefono) {
+        this.id = id;
+        this.nit = nit;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
     public Long getId() {
         return id;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getNit() {
+        return nit;
+    }
+
+    public void setNit(String nit) {
+        this.nit = nit;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public long getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(long telefono) {
+        this.telefono = telefono;
+    }
 }
+

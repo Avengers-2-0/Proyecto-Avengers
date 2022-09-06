@@ -1,19 +1,38 @@
 package Entidades;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+
+@Entity
+@Table(name = "Empleado")
 public class Empleado {
-    private Empresa Empresa;
-    public String nombreEmpleado;
-    public String correoEmpleado;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
+
+    @Column(name = "nombreEmpleado",unique = true)
+    private String nombreEmpleado;
+    @Column(name = "correoEmpleado",unique = true)
+    private String correoEmpleado;
+    @Column(name = "rolempleado")
+    private String rolEmpleado;
+
+    @ManyToOne
+    @JoinColumn(name="empresa_id")
     public Empresa empresa;
-    public String rolEmpleado;
 
+    public Empleado(){}
 
-    public Empleado(String nombreEmpleado, String correoEmpleado, Empresa empresa, String rolEmpleado) {
+    public Empleado(long id, String nombreEmpleado, String correoEmpleado, String rolEmpleado, Empresa empresa) {
+        this.id = id;
         this.nombreEmpleado = nombreEmpleado;
         this.correoEmpleado = correoEmpleado;
-        Empresa = empresa;
         this.rolEmpleado = rolEmpleado;
+        this.empresa = empresa;
     }
+
+}
 
     public String getNombreEmpleado() {
 
@@ -33,18 +52,25 @@ public class Empleado {
     }
 
     public Empresa getEmpresa() {
-        return Empresa;
+        return empresa;
     }
 
     public void setEmpresa(Empresa empresa) {
-        Empresa = empresa;
+        this.empresa = empresa;
     }
 
     public String getRolEmpleado() {
         return rolEmpleado;
     }
 
+
+
     public void setRolEmpleado(String rolEmpleado) {
         this.rolEmpleado = rolEmpleado;
     }
+
+    public long getId() {
+        return id;}
+    public void setId(long id) {
+        this.id = id;}
 }

@@ -6,47 +6,66 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
-public class EmpresaServiciosImpl implements EmpresaServicios{
+public class EmpresaServiciosImpl implements EmpresaServicios {
 
     @Autowired
     EmpresaRepositorio empresaRepositorio;
 
     @Override
-    public List<Empresa> getEmpresas() throws Exception {
-        return null;
+    public List<Empresa> getEmpresas() {
+        return this.empresaRepositorio.findAll();
     }
 
+
     @Override
-    public Empresa getEmpresa(Long id) throws Exception {
-        return null;
+    public Empresa getEmpresa(Long id) {
+        Optional<Empresa> empresa = this.empresaRepositorio.findById(id);
+        return empresa.orElse(null);
     }
 
     @Override
     public Empresa createEmpresa(Empresa empresa) {
-        empresaRepositorio.save(empresa);
-        return empresa;
+        return this.empresaRepositorio.save(empresa);
     }
 
     @Override
-    public Empresa updateEmpresa(Long id, Empresa empresa) throws Exception {
-        return empresa;
+    public Empresa updateEmpresa(Long id, Empresa empresa) {
+        Optional<Empresa> dbEmpresa = this.empresaRepositorio.findById(id);
+        if (dbEmpresa.isPresent()){
+            Empresa empresa1=dbEmpresa.get();
+        empresa1.setNit(empresa1.getNit());
+        empresa1.setNombre(empresa1.getNombre());
+        empresa1.setDireccion(empresa1.getDireccion());
+        empresa1.setTelefono(empresa1.getTelefono());
+        this.empresaRepositorio.save(empresa1);
+        return empresa1;
     }
-
-    @Override
-    public Empresa updateEmpresa(Empresa empresa) throws Exception {
-        return empresa;
-    }
-
-    @Override
-    public boolean deleteEmpresa(Long id) throws Exception {
-
-        return false;
+        return null;
     }
 
 
     @Override
-    public Iterable<Empresa> getAllEmpresa(){return empresaRepositorio.findAll();}
-
+    public boolean deleteEmpresa(Long id) {
+        try {
+            this.empresaRepositorio.deleteById(id);
+            return true;
+        } catch (Exception empresa1) {
+            return false;
+        }
+//    public boolean deleteEmpresa(Long id) {
+//        boolean eliminar = true;
+//        Empresa empresa1 = (Empresa) empresaRepositorio.findById(id).orElse(null);
+//        if (empresa1 == null) {
+//            eliminar = false;
+////        }else {
+////            empresaRepositorio.deleteById(id);
+//        }
+    }
 }
+
+
+
+
