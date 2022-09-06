@@ -2,12 +2,15 @@ package Entidades;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name = "Empresa")
-public class Empresa {
+@Table(name = "Empresa", uniqueConstraints = {
+        @UniqueConstraint(name = "uc_empresa_telefonoempresa", columnNames = {"telefonoEmpresa"})
+})
+public class Empresa implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name="nombreEmpresa")
@@ -30,9 +33,7 @@ public class Empresa {
         this.direccionEmpresa = direccionEmpresa;
         this.telefonoEmpresa = telefonoEmpresa;
         this.nitEmpresa = nitEmpresa;
-
     }
-
 
     public String getNombreEmpresa() {
         return nombreEmpresa;
@@ -70,9 +71,5 @@ public class Empresa {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-
-    }
+}
