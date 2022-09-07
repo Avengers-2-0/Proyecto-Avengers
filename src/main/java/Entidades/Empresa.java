@@ -33,8 +33,7 @@ public class Empresa {
     public Empresa() {
     }
 
-    public Empresa(Long id, String nit, String nombre, String direccion, long telefono) {
-        this.id = id;
+    public Empresa(String nit, String nombre, String direccion, long telefono) {
         this.nit = nit;
         this.nombre = nombre;
         this.direccion = direccion;

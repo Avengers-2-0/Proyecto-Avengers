@@ -5,9 +5,9 @@ import Entidades.Empresa;
 import java.util.List;
 
 public interface EmpresaServicios {
-    public List<Empresa> getEmpresas() throws Exception;
+    public List<Empresa> getEmpresas();
 
-    Empresa getEmpresa(Long id) throws Exception;
+   public Empresa getEmpresa(Long id) throws Exception;
 
     public Empresa createEmpresa(Empresa empresa);
 

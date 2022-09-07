@@ -14,7 +14,7 @@ public class EmpresaControladores {
     EmpresaServicios servicios;
 
     @GetMapping("/empresas")
-    public List<Empresa> getEmpresas() throws Exception {
+    public List<Empresa> getEmpresas(){
         return servicios.getEmpresas();
     }
 
@@ -24,7 +24,7 @@ public class EmpresaControladores {
     }
 
     @PostMapping("/empresa/new")
-    public Empresa createEnterprise(@RequestBody Empresa empresa){
+    public Empresa createEmpresa(@RequestBody Empresa empresa){
         return servicios.createEmpresa(empresa);
     }
 
