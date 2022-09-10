@@ -33,15 +33,15 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
 
     @Override
     public Empresa updateEmpresa(Long id_empresa, Empresa empresa) {
-        Optional<Empresa> dbEmpresa = this.empresaRepositorio.findById(id);
+        Optional<Empresa> dbEmpresa = this.empresaRepositorio.findById(id_empresa);
         if (dbEmpresa.isPresent()){
-            Empresa empresa1=dbEmpresa.get();
-        empresa1.setNit(empresa1.getNit());
-        empresa1.setNombre(empresa1.getNombre());
-        empresa1.setDireccion(empresa1.getDireccion());
-        empresa1.setTelefono(empresa1.getTelefono());
-        this.empresaRepositorio.save(empresa1);
-        return empresa1;
+            empresa = dbEmpresa.get();
+        empresa.setNit(empresa.getNit());
+        empresa.setNombre(empresa.getNombre());
+        empresa.setDireccion(empresa.getDireccion());
+        empresa.setTelefono(empresa.getTelefono());
+        this.empresaRepositorio.save(empresa);
+        return empresa;
     }
         return null;
     }
@@ -55,14 +55,6 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
         } catch (Exception empresa1) {
             return false;
         }
-//    public boolean deleteEmpresa(Long id) {
-//        boolean eliminar = true;
-//        Empresa empresa1 = (Empresa) empresaRepositorio.findById(id).orElse(null);
-//        if (empresa1 == null) {
-//            eliminar = false;
-////        }else {
-////            empresaRepositorio.deleteById(id);
-//        }
     }
 }
 

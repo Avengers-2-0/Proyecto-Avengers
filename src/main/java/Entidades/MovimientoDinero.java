@@ -4,14 +4,16 @@ package Entidades;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MovimientoDinero")
+@Table(name = "Transaction")
 public class MovimientoDinero {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_transaction")
     public long id_transaction;
+
     @Column(name = "montoMovimiento")
     public int montoMovimiento;
+
     @Column(name = "conceptoMovimiento")
     public String conceptoMovimiento;
 
@@ -22,18 +24,19 @@ public class MovimientoDinero {
     public MovimientoDinero() {
     }
 
-    public MovimientoDinero(int montoMovimiento, String conceptoMovimiento, Empleado empleado) {
+    public MovimientoDinero(long id_transaction, int montoMovimiento, String conceptoMovimiento, Empleado empleado) {
+        this.id_transaction = id_transaction;
         this.montoMovimiento = montoMovimiento;
         this.conceptoMovimiento = conceptoMovimiento;
         this.empleado = empleado;
     }
 
-    public long getId() {
-        return id;
+    public long getId_transaction() {
+        return id_transaction;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId_transaction(long id_transaction) {
+        this.id_transaction = id_transaction;
     }
 
     public int getMontoMovimiento() {

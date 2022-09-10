@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("empresas")
+@RequestMapping("enterprises")
 public class EmpresaControladores {
     @Autowired
     EmpresaServicios servicios;
@@ -18,7 +18,7 @@ public class EmpresaControladores {
         return servicios.getEmpresas();
     }
 
-    @GetMapping("/enterprises/{id_empresa}")
+    @GetMapping("/enterprises/[id_empresa]")
     public Empresa getEmpresa(@PathVariable("id") Long id_empresa) throws Exception {
         return servicios.getEmpresa(id_empresa);
     }
@@ -28,12 +28,12 @@ public class EmpresaControladores {
         return servicios.createEmpresa(empresa);
     }
 
-    @PutMapping("/enterprises/{id_empresa}")
+    @PutMapping("/enterprises/[id_empresa]")
     public Empresa updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
         return servicios.updateEmpresa(id_empresa, empresa);
     }
 
-    @DeleteMapping("/enterprises/{id_empresa}")
+    @DeleteMapping("/enterprises/[id_empresa]")
     public boolean deleteEmpresa(@PathVariable("id empresa") Long id_empresa) throws Exception {
         return servicios.deleteEmpresa(id_empresa);
     }
