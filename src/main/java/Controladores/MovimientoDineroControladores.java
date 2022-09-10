@@ -35,6 +35,6 @@ public class MovimientoDineroControladores {
 
     @DeleteMapping("/transaction/{id_transaction}")
     public boolean deleteMovimientoDinero(@PathVariable("id_transaction") Long id_transaction) throws Exception {
-        return movimientoDineroServicios.deleteMoviminentoDinero(id_transaction);
+        return movimientoDineroServicios.deleteMovimientoDinero(id_transaction);
     }
 }
