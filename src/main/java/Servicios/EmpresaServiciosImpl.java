@@ -21,8 +21,8 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
 
 
     @Override
-    public Empresa getEmpresa(Long id) {
-        Optional<Empresa> empresa = this.empresaRepositorio.findById(id);
+    public Empresa getEmpresa(Long id_empresa) {
+        Optional<Empresa> empresa = this.empresaRepositorio.findById(id_empresa);
         return empresa.orElse(null);
     }
 
@@ -32,7 +32,7 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
     }
 
     @Override
-    public Empresa updateEmpresa(Long id, Empresa empresa) {
+    public Empresa updateEmpresa(Long id_empresa, Empresa empresa) {
         Optional<Empresa> dbEmpresa = this.empresaRepositorio.findById(id);
         if (dbEmpresa.isPresent()){
             Empresa empresa1=dbEmpresa.get();
@@ -48,9 +48,9 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
 
 
     @Override
-    public boolean deleteEmpresa(Long id) {
+    public boolean deleteEmpresa(Long id_empresa) {
         try {
-            this.empresaRepositorio.deleteById(id);
+            this.empresaRepositorio.deleteById(id_empresa);
             return true;
         } catch (Exception empresa1) {
             return false;
