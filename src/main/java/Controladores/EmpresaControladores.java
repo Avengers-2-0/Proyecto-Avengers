@@ -13,29 +13,29 @@ public class EmpresaControladores {
     @Autowired
     EmpresaServicios servicios;
 
-    @GetMapping("/empresas")
+    @GetMapping("/enterprises")
     public List<Empresa> getEmpresas(){
         return servicios.getEmpresas();
     }
 
-    @GetMapping("/empresa/{id}")
-    public Empresa getEmpresa(@PathVariable("id") Long id) throws Exception {
-        return servicios.getEmpresa(id);
+    @GetMapping("/enterprises/{id_empresa}")
+    public Empresa getEmpresa(@PathVariable("id") Long id_empresa) throws Exception {
+        return servicios.getEmpresa(id_empresa);
     }
 
-    @PostMapping("/empresa/new")
+    @PostMapping("/enterprises/new")
     public Empresa createEmpresa(@RequestBody Empresa empresa){
         return servicios.createEmpresa(empresa);
     }
 
-    @PutMapping("/empresa/{id}")
-    public Empresa updateEmpresa(@PathVariable("id") Long id, @RequestBody Empresa empresa) throws Exception {
-        return servicios.updateEmpresa(id, empresa);
+    @PutMapping("/enterprises/{id_empresa}")
+    public Empresa updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
+        return servicios.updateEmpresa(id_empresa, empresa);
     }
 
-    @DeleteMapping("/empresa/{id}")
-    public boolean deleteEmpresa(@PathVariable("id") Long id) throws Exception {
-        return servicios.deleteEmpresa(id);
+    @DeleteMapping("/enterprises/{id_empresa}")
+    public boolean deleteEmpresa(@PathVariable("id empresa") Long id_empresa) throws Exception {
+        return servicios.deleteEmpresa(id_empresa);
     }
 }
 
