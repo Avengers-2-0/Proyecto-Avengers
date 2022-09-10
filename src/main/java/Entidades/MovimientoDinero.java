@@ -8,7 +8,8 @@ import javax.persistence.*;
 public class MovimientoDinero {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    public long id;
+    @Column(name = "id_transaction")
+    public long id_transaction;
     @Column(name = "montoMovimiento")
     public int montoMovimiento;
     @Column(name = "conceptoMovimiento")
