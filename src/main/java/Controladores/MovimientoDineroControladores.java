@@ -14,7 +14,7 @@ public class MovimientoDineroControladores {
     @Autowired
     MovimientoDineroServicios movimientoDineroServicios;
     @GetMapping("/transaction")
-    public List<MovimientoDinero> getMovimientoDinero(){
+    public List<MovimientoDinero> getMovimientoDinero() throws Exception {
         return movimientoDineroServicios.getMovimientosDinero();
     }
 

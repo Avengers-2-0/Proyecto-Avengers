@@ -5,7 +5,7 @@ import Entidades.Empleado;
 import java.util.List;
 
 public interface EmpleadoServicios {
-    public List<Empleado> getEmpleados();
+    public List<Empleado> getEmpleados()throws Exception;
 
     public Empleado getEmpleado(Long id) throws Exception;
 

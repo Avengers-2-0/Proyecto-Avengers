@@ -11,7 +11,7 @@ public class EmpleadoServiciosImpl implements EmpleadoServicios {
     @Autowired
     EmpleadoRepositorio empleadoRepositorio;
     @Override
-    public List<Empleado> getEmpleados() {
+    public List<Empleado> getEmpleados() throws Exception{
         return null;
     }
 

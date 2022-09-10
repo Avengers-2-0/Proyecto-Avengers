@@ -14,7 +14,7 @@ public class EmpresaControladores {
     EmpresaServicios servicios;
 
     @GetMapping("/enterprises")
-    public List<Empresa> getEmpresas(){
+    public List<Empresa> getEmpresas() throws Exception{
         return servicios.getEmpresas();
     }
 
@@ -30,7 +30,7 @@ public class EmpresaControladores {
 
     @PutMapping("/enterprises/[id_empresa]")
     public Empresa updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
-        return servicios.updateEmpresa(id_empresa, empresa);
+        return servicios.updateEmpresa(id_empresa,empresa);
     }
 
     @DeleteMapping("/enterprises/[id_empresa]")
