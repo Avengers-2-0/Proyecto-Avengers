@@ -2,7 +2,7 @@ package Entidades;
 
 
 import javax.persistence.*;
-import java.util.Date;
+
 
 @Entity
 @Table(name = "Empresa")
@@ -10,9 +10,8 @@ import java.util.Date;
 public class Empresa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    @Column(name = "nit")
-    private String nit;
+    @Column(name = "id_empresa", nullable = false)
+    private Long id_empresa;
     @Column(name = "nombre", unique = true)
     private String nombre;
     @Column(name = "dirección")
@@ -20,40 +19,27 @@ public class Empresa {
     @Column(name = "telefono")
     private long telefono;
 
-    private Date createAt;
+    @Column(name = "nit")
+    private String nit;
 
-    private Date updateAt;
 
-
-//    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
-//    private ArrayList<Empleado> empleados;
-
-    //    @OneToMany(mappedBy = "id", fetch = FetchType.LAZY)
-//    private ArrayList<MovimientoDinero>movimientoDineros;
     public Empresa() {
     }
 
-    public Empresa(String nit, String nombre, String direccion, long telefono) {
-        this.nit = nit;
+    public Empresa(Long id_empresa, String nombre, String direccion, long telefono, String nit) {
+        this.id_empresa = id_empresa;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNit() {
-        return nit;
-    }
-
-    public void setNit(String nit) {
         this.nit = nit;
+    }
+
+    public Long getId_empresa() {
+        return id_empresa;
+    }
+
+    public void setId_empresa(Long id_empresa) {
+        this.id_empresa = id_empresa;
     }
 
     public String getNombre() {
@@ -79,5 +65,12 @@ public class Empresa {
     public void setTelefono(long telefono) {
         this.telefono = telefono;
     }
-}
 
+    public String getNit() {
+        return nit;
+    }
+
+    public void setNit(String nit) {
+        this.nit = nit;
+    }
+}

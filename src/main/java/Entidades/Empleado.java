@@ -1,7 +1,6 @@
 package Entidades;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 
 @Entity
 @Table(name = "Empleado")
@@ -31,7 +30,6 @@ public class Empleado {
         this.empresa = empresa;
     }
 
-}
 
     public String getNombreEmpleado() {
 
