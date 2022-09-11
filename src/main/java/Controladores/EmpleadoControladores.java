@@ -12,30 +12,30 @@ import java.util.List;
 
 public class EmpleadoControladores {
   @Autowired
-    EmpleadoServicios servicios;
+    EmpleadoServicios empleadoServicios;
 
     @GetMapping("/Users")
     public List<Empleado> getEmpleados() throws Exception {
-        return servicios.getEmpleados();
+        return empleadoServicios.getEmpleados();
     }
 
     @GetMapping("/Users/{id}")
     public Empleado getEmpleado(@PathVariable("id") Long id) throws Exception {
-        return servicios.getEmpleado(id);
+        return empleadoServicios.getEmpleado(id);
     }
 
     @PostMapping("/Users/new")
     public Empleado createEmpleado(@RequestBody Empleado empleado){
-        return servicios.createEmpleado(empleado);
+        return empleadoServicios.createEmpleado(empleado);
     }
 
    @PutMapping("/Users/{id}")
     public Empleado updateEmpleado(@PathVariable("id") Long id, @RequestBody Empleado empleado) throws Exception{
-        return servicios.updateEmpleado(id,empleado);
+        return empleadoServicios.updateEmpleado(id,empleado);
    }
 
     @DeleteMapping("/Users/{id}")
     public boolean deleteEmpleado(@PathVariable("id") Long id) throws Exception{
-        return servicios.deleteEmpleado(id);
+        return empleadoServicios.deleteEmpleado(id);
     }
 }
