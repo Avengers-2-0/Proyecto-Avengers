@@ -1,4 +1,4 @@
-package Entidades;
+package com.example.Spring3.Entidades;
 
 import javax.persistence.*;
 

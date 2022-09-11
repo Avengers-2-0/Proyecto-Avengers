@@ -1,6 +1,6 @@
-package Repositorios;
+package com.example.Spring3.Repositorios;
 
-import Entidades.Empleado;
+import com.example.Spring3.Entidades.Empleado;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

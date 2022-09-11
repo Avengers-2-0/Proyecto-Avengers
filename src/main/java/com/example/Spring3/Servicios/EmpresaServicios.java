@@ -1,6 +1,6 @@
-package Servicios;
+package com.example.Spring3.Servicios;
 
-import Entidades.Empresa;
+import com.example.Spring3.Entidades.Empresa;
 
 import java.util.List;
 

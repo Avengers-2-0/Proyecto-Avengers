@@ -1,8 +1,8 @@
-package Controladores;
+package com.example.Spring3.Controladores;
 
 
-import Entidades.MovimientoDinero;
-import Servicios.MovimientoDineroServicios;
+import com.example.Spring3.Entidades.MovimientoDinero;
+import com.example.Spring3.Servicios.MovimientoDineroServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

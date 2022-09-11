@@ -1,6 +1,6 @@
-package Repositorios;
+package com.example.Spring3.Repositorios;
 
-import Entidades.MovimientoDinero;
+import com.example.Spring3.Entidades.MovimientoDinero;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

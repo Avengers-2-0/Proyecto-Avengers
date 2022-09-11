@@ -1,7 +1,7 @@
-package Controladores;
+package com.example.Spring3.Controladores;
 
-import Entidades.Empleado;
-import Servicios.EmpleadoServicios;
+import com.example.Spring3.Entidades.Empleado;
+import com.example.Spring3.Servicios.EmpleadoServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

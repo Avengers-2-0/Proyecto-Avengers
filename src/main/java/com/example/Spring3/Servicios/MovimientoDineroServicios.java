@@ -1,6 +1,6 @@
-package Servicios;
+package com.example.Spring3.Servicios;
 
-import Entidades.MovimientoDinero;
+import com.example.Spring3.Entidades.MovimientoDinero;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package Servicios;
+package com.example.Spring3.Servicios;
 
-import Entidades.MovimientoDinero;
-import Repositorios.MovimientoDineroRepositorio;
+import com.example.Spring3.Entidades.MovimientoDinero;
+import com.example.Spring3.Repositorios.MovimientoDineroRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
