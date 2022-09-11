@@ -48,7 +48,7 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
 
 
     @Override
-    public boolean deleteEmpresa(Long id_empresa) throws Exception {
+    public boolean deleteEmpresa(Long id_empresa) {
         try {
             this.empresaRepositorio.deleteById(id_empresa);
             return true;

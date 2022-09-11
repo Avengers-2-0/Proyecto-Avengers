@@ -5,14 +5,14 @@ import Entidades.Empresa;
 import java.util.List;
 
 public interface EmpresaServicios {
-    public List<Empresa> getEmpresas()throws Exception;
+    List<Empresa> getEmpresas()throws Exception;
 
-   public Empresa getEmpresa(Long id_empresa) throws Exception;
+    Empresa getEmpresa(Long id_empresa) throws Exception;
 
-    public Empresa createEmpresa(Empresa empresa);
+    Empresa createEmpresa(Empresa empresa);
 
-    public Empresa updateEmpresa(Long id_empresa, Empresa empresa) throws Exception;
+    Empresa updateEmpresa(Long id_empresa, Empresa empresa) throws Exception;
 
-    public boolean deleteEmpresa(Long id_empresa) throws Exception;
+    boolean deleteEmpresa(Long id_empresa) throws Exception;
 
 }
