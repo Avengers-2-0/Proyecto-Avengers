@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class EmpleadoServiciosImpl implements EmpleadoServicios {
     
@@ -33,13 +35,13 @@ public class EmpleadoServiciosImpl implements EmpleadoServicios {
 
         Optional<Empleado> dbEmpleado = this.empleadoRepositorio.findById(id);
         if (dbEmpleado.isPresent()) {
-            Empleado empleado1=dbEmpleado.get();
-            empleado1.setNombreEmpleado(empleado1.getNombreEmpleado());
-            empleado1.setCorreoEmpleado(empleado1.getCorreoEmpleado());
-            empleado1.setRolEmpleado(empleado1.getRolEmpleado());
-            empleado1.setEmpresa(empleado1.getEmpresa());
-            this.empleadoRepositorio.save(empleado1);
-            return empleado1;
+            empleado = dbEmpleado.get();
+            empleado.setNombreEmpleado(empleado.getNombreEmpleado());
+            empleado.setCorreoEmpleado(empleado.getCorreoEmpleado());
+            empleado.setRolEmpleado(empleado.getRolEmpleado());
+            empleado.setEmpresa(empleado.getEmpresa());
+            this.empleadoRepositorio.save(empleado);
+            return empleado;
 
         }
         return null;
@@ -50,7 +52,7 @@ public class EmpleadoServiciosImpl implements EmpleadoServicios {
         try {
             this.empleadoRepositorio.deleteById(id);
             return true;
-        } catch (Exception empleado1) {
+        } catch (Exception empleado) {
             return false;
         }
     }
