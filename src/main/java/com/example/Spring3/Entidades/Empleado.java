@@ -23,8 +23,7 @@ public class Empleado {
 
     public Empleado(){}
 
-    public Empleado(long id, String nombreEmpleado, String correoEmpleado, String rolEmpleado, Empresa empresa) {
-        this.id = id;
+    public Empleado(String nombreEmpleado, String correoEmpleado, String rolEmpleado, Empresa empresa) {
         this.nombreEmpleado = nombreEmpleado;
         this.correoEmpleado = correoEmpleado;
         this.rolEmpleado = rolEmpleado;

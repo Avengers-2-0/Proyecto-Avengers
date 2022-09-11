@@ -24,8 +24,7 @@ public class MovimientoDinero {
     public MovimientoDinero() {
     }
 
-    public MovimientoDinero(long id_transaction, int montoMovimiento, String conceptoMovimiento, Empleado empleado) {
-        this.id_transaction = id_transaction;
+    public MovimientoDinero(int montoMovimiento, String conceptoMovimiento, Empleado empleado) {
         this.montoMovimiento = montoMovimiento;
         this.conceptoMovimiento = conceptoMovimiento;
         this.empleado = empleado;

@@ -26,8 +26,7 @@ public class Empresa {
     public Empresa() {
     }
 
-    public Empresa(Long id_empresa, String nombre, String direccion, long telefono, String nit) {
-        this.id_empresa = id_empresa;
+    public Empresa(String nombre, String direccion, long telefono, String nit) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
