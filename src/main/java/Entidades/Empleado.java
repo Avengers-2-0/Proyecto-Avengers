@@ -23,13 +23,13 @@ public class Empleado {
 
     public Empleado(){}
 
-    public Empleado(String nombreEmpleado, String correoEmpleado, String rolEmpleado, Empresa empresa) {
+    public Empleado(long id, String nombreEmpleado, String correoEmpleado, String rolEmpleado, Empresa empresa) {
+        this.id = id;
         this.nombreEmpleado = nombreEmpleado;
         this.correoEmpleado = correoEmpleado;
         this.rolEmpleado = rolEmpleado;
         this.empresa = empresa;
     }
-
 
     public String getNombreEmpleado() {
 
