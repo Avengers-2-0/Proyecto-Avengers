@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 
 
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
-public class
-Avengers {
+public class Avengers {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Avengers.class, args);
