@@ -18,7 +18,7 @@ public class EmpresaControladores {
         return Empresaservicios.getEmpresas();
     }
 
-    @GetMapping("/enterprises/[id_empresa]")
+    @GetMapping("/enterprises/{id_empresa}")
     public Empresa getEmpresa(@PathVariable("id") Long id_empresa) throws Exception {
         return Empresaservicios.getEmpresa(id_empresa);
     }
@@ -28,12 +28,12 @@ public class EmpresaControladores {
         return Empresaservicios.createEmpresa(empresa);
     }
 
-    @PutMapping("/enterprises/[id_empresa]")
+    @PutMapping("/enterprises/{id_empresa}")
     public Empresa updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
         return Empresaservicios.updateEmpresa(id_empresa,empresa);
     }
 
-    @DeleteMapping("/enterprises/[id_empresa]")
+    @DeleteMapping("/enterprises/{id_empresa}")
     public boolean deleteEmpresa(@PathVariable("id_empresa") Long id_empresa) throws Exception {
         return Empresaservicios.deleteEmpresa(id_empresa);
     }
