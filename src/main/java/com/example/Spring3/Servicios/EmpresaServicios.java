@@ -11,7 +11,7 @@ public interface EmpresaServicios {
 
     Empresa createEmpresa(Empresa empresa);
 
-    Empresa updateEmpresa(Long id_empresa, Empresa empresa) throws Exception;
+    String updateEmpresa(Long id_empresa, Empresa empresa) throws Exception;
 
     boolean deleteEmpresa(Long id_empresa) throws Exception;
 

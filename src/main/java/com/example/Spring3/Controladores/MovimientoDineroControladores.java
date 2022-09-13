@@ -9,33 +9,34 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("transaction")
+
 public class MovimientoDineroControladores {
     @Autowired
     MovimientoDineroServicios movimientoDineroServicios;
     public MovimientoDineroControladores(MovimientoDineroServicios movimientoDineroServicios){
         this.movimientoDineroServicios = movimientoDineroServicios;}
-    @GetMapping("/transaction")
+    @GetMapping("/movements")
     public List<MovimientoDinero> getMovimientoDinero() throws Exception {
         return movimientoDineroServicios.getMovimientosDinero();
     }
 
-    @GetMapping("/transaction/{id_transaction}")
+
+    @GetMapping("/enterprises/{id_transaction}/movements")
     public MovimientoDinero getMovimientoDinero(@PathVariable("id_transaction") Long id_transaction) throws Exception {
         return movimientoDineroServicios.getMovimientoDinero(id_transaction);
     }
 
-    @PostMapping("/transaction/new")
+    @PostMapping("/enterprises/{id_transaction}/movements")
     public MovimientoDinero createMovimientoDinero(@RequestBody MovimientoDinero movimientoDinero){
         return movimientoDineroServicios.createMovimientoDinero(movimientoDinero);
     }
 
-    @PatchMapping("/transaction/{id_transaction}")
+    @PatchMapping("/enterprises/{id_transaction}/movements")
     public MovimientoDinero updateMovimientoDinero(@PathVariable("id_transaction") Long id_transaction, @RequestBody MovimientoDinero movimientoDinero) throws Exception {
         return movimientoDineroServicios.updateMovimientoDinero(id_transaction, movimientoDinero);
     }
 
-    @DeleteMapping("/transaction/{id_transaction}")
+    @DeleteMapping("/enterprises/{id_transaction}/movements")
     public boolean deleteMovimientoDinero(@PathVariable("id_transaction") Long id_transaction) throws Exception {
         return movimientoDineroServicios.deleteMovimientoDinero(id_transaction);
     }

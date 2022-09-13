@@ -32,7 +32,7 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
     }
 
     @Override
-    public Empresa updateEmpresa(Long id_empresa, Empresa empresa) {
+    public String updateEmpresa(Long id_empresa, Empresa empresa) {
         Optional<Empresa> dbEmpresa = this.empresaRepositorio.findById(id_empresa);
         if (dbEmpresa.isPresent()){
             empresa = dbEmpresa.get();
@@ -41,7 +41,7 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
         empresa.setDireccion(empresa.getDireccion());
         empresa.setTelefono(empresa.getTelefono());
         this.empresaRepositorio.save(empresa);
-        return empresa;
+        return "empresa actualizada";
     }
         return null;
     }

@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "enterprises")
+
 public class EmpresaControladores {
     @Autowired
     EmpresaServicios empresaServicios;
     public EmpresaControladores(EmpresaServicios empresaServicios){
         this.empresaServicios = empresaServicios;}
-    @RequestMapping(value = "enterprises",method = RequestMethod.GET)
-    @ResponseBody
+    @GetMapping("/enterprises")
     public List<Empresa> getEmpresas() throws Exception{
         return empresaServicios.getEmpresas();
     }
@@ -25,13 +24,13 @@ public class EmpresaControladores {
         return empresaServicios.getEmpresa(id_empresa);
     }
 
-    @PostMapping("/enterprises/new")
+    @PostMapping("/enterprises")
     public Empresa createEmpresa(@RequestBody Empresa empresa){
         return empresaServicios.createEmpresa(empresa);
     }
 
     @PatchMapping("/enterprises/{id_empresa}")
-    public Empresa updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
+    public String updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
         return empresaServicios.updateEmpresa(id_empresa,empresa);
     }
 

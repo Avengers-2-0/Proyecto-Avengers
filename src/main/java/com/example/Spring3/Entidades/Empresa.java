@@ -22,7 +22,6 @@ public class Empresa {
     @Column(name = "nit")
     private String nit;
 
-
     public Empresa() {
     }
 
@@ -73,5 +72,4 @@ public class Empresa {
         this.nit = nit;
     }
 
-
-    }
+}
