@@ -8,34 +8,36 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("enterprises")
+@RequestMapping(value = "enterprises")
 public class EmpresaControladores {
     @Autowired
-    EmpresaServicios Empresaservicios;
-
-    @GetMapping("/enterprises")
+    EmpresaServicios empresaServicios;
+    public EmpresaControladores(EmpresaServicios empresaServicios){
+        this.empresaServicios = empresaServicios;}
+    @RequestMapping(value = "enterprises",method = RequestMethod.GET)
+    @ResponseBody
     public List<Empresa> getEmpresas() throws Exception{
-        return Empresaservicios.getEmpresas();
+        return empresaServicios.getEmpresas();
     }
 
     @GetMapping("/enterprises/{id_empresa}")
     public Empresa getEmpresa(@PathVariable("id") Long id_empresa) throws Exception {
-        return Empresaservicios.getEmpresa(id_empresa);
+        return empresaServicios.getEmpresa(id_empresa);
     }
 
     @PostMapping("/enterprises/new")
     public Empresa createEmpresa(@RequestBody Empresa empresa){
-        return Empresaservicios.createEmpresa(empresa);
+        return empresaServicios.createEmpresa(empresa);
     }
 
-    @PutMapping("/enterprises/{id_empresa}")
+    @PatchMapping("/enterprises/{id_empresa}")
     public Empresa updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
-        return Empresaservicios.updateEmpresa(id_empresa,empresa);
+        return empresaServicios.updateEmpresa(id_empresa,empresa);
     }
 
     @DeleteMapping("/enterprises/{id_empresa}")
     public boolean deleteEmpresa(@PathVariable("id_empresa") Long id_empresa) throws Exception {
-        return Empresaservicios.deleteEmpresa(id_empresa);
+        return empresaServicios.deleteEmpresa(id_empresa);
     }
 }
 

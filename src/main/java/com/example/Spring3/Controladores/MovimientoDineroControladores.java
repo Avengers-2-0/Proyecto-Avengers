@@ -13,6 +13,8 @@ import java.util.List;
 public class MovimientoDineroControladores {
     @Autowired
     MovimientoDineroServicios movimientoDineroServicios;
+    public MovimientoDineroControladores(MovimientoDineroServicios movimientoDineroServicios){
+        this.movimientoDineroServicios = movimientoDineroServicios;}
     @GetMapping("/transaction")
     public List<MovimientoDinero> getMovimientoDinero() throws Exception {
         return movimientoDineroServicios.getMovimientosDinero();
@@ -28,7 +30,7 @@ public class MovimientoDineroControladores {
         return movimientoDineroServicios.createMovimientoDinero(movimientoDinero);
     }
 
-    @PutMapping("/transaction/{id_transaction}")
+    @PatchMapping("/transaction/{id_transaction}")
     public MovimientoDinero updateMovimientoDinero(@PathVariable("id_transaction") Long id_transaction, @RequestBody MovimientoDinero movimientoDinero) throws Exception {
         return movimientoDineroServicios.updateMovimientoDinero(id_transaction, movimientoDinero);
     }
