@@ -5,8 +5,6 @@ import com.example.Spring3.Servicios.EmpresaServicios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 
 public class EmpresaControladores {
@@ -14,10 +12,8 @@ public class EmpresaControladores {
     EmpresaServicios empresaServicios;
     public EmpresaControladores(EmpresaServicios empresaServicios){
         this.empresaServicios = empresaServicios;}
-    @GetMapping("/enterprises")
-    public List<Empresa> getEmpresas() throws Exception{
-        return empresaServicios.getEmpresas();
-    }
+
+
 
     @GetMapping("/enterprises/{id_empresa}")
     public Empresa getEmpresa(@PathVariable("id_empresa") Long id_empresa) throws Exception {

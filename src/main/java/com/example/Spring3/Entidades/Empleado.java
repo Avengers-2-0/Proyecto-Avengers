@@ -15,7 +15,7 @@ public class Empleado {
     @Column(name = "correoEmpleado",unique = true)
     private String correoEmpleado;
     @Column(name = "rolempleado")
-    private String rolEmpleado;
+    private String  rolEmpleado;
 
     @ManyToOne
     @JoinColumn(name="empresa_id")
@@ -58,8 +58,6 @@ public class Empleado {
     public String getRolEmpleado() {
         return rolEmpleado;
     }
-
-
 
     public void setRolEmpleado(String rolEmpleado) {
         this.rolEmpleado = rolEmpleado;
