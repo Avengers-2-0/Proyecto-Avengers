@@ -30,16 +30,9 @@ public class MovimientoDineroImpl implements MovimientoDineroServicios {
 
     @Override
     public MovimientoDinero updateMovimientoDinero(Long id_transaction, MovimientoDinero movimientoDinero) {
-        Optional<MovimientoDinero> dbMovimiento = this.movimientoDineroRepositorio.findById(id_transaction);
-        if (dbMovimiento.isPresent()) {
-            movimientoDinero = dbMovimiento.get();
-            movimientoDinero.setMontoMovimiento(movimientoDinero.getMontoMovimiento());
-            movimientoDinero.setConceptoMovimiento(movimientoDinero.getConceptoMovimiento());
-            this.movimientoDineroRepositorio.save(movimientoDinero);
-            return movimientoDinero;
+       this.movimientoDineroRepositorio.findById(id_transaction).get();
+       return this.movimientoDineroRepositorio.save(movimientoDinero);
         }
-        return null;
-    }
 
     @Override
     public boolean deleteMovimientoDinero(Long id_transaction) throws Exception {

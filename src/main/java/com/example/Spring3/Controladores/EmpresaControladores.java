@@ -20,7 +20,7 @@ public class EmpresaControladores {
     }
 
     @GetMapping("/enterprises/{id_empresa}")
-    public Empresa getEmpresa(@PathVariable("id") Long id_empresa) throws Exception {
+    public Empresa getEmpresa(@PathVariable("id_empresa") Long id_empresa) throws Exception {
         return empresaServicios.getEmpresa(id_empresa);
     }
 
@@ -30,7 +30,7 @@ public class EmpresaControladores {
     }
 
     @PatchMapping("/enterprises/{id_empresa}")
-    public String updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
+    public Empresa updateEmpresa(@PathVariable("id_empresa") Long id_empresa, @RequestBody Empresa empresa) throws Exception {
         return empresaServicios.updateEmpresa(id_empresa,empresa);
     }
 

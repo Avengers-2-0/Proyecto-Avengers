@@ -4,7 +4,7 @@ package com.example.Spring3.Entidades;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Transaction")
+@Table(name = "movements")
 public class MovimientoDinero {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

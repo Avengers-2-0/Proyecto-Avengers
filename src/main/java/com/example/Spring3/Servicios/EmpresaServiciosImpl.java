@@ -32,20 +32,10 @@ public class EmpresaServiciosImpl implements EmpresaServicios {
     }
 
     @Override
-    public String updateEmpresa(Long id_empresa, Empresa empresa) {
-        Optional<Empresa> dbEmpresa = this.empresaRepositorio.findById(id_empresa);
-        if (dbEmpresa.isPresent()){
-            empresa = dbEmpresa.get();
-        empresa.setNit(empresa.getNit());
-        empresa.setNombre(empresa.getNombre());
-        empresa.setDireccion(empresa.getDireccion());
-        empresa.setTelefono(empresa.getTelefono());
-        this.empresaRepositorio.save(empresa);
-        return "empresa actualizada";
+    public Empresa updateEmpresa(Long id_empresa, Empresa empresa){
+        this.empresaRepositorio.findById(id_empresa).get();
+        return this.empresaRepositorio.save(empresa);
     }
-        return null;
-    }
-
 
     @Override
     public boolean deleteEmpresa(Long id_empresa) {

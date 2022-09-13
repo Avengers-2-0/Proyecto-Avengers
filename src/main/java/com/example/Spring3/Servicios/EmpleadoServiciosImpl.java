@@ -32,20 +32,11 @@ public class EmpleadoServiciosImpl implements EmpleadoServicios {
 
     @Override
     public Empleado updateEmpleado(Long id, Empleado empleado) throws Exception {
+        this.empleadoRepositorio.findById(id).get();
+        return this.empleadoRepositorio.save(empleado);
 
-        Optional<Empleado> dbEmpleado = this.empleadoRepositorio.findById(id);
-        if (dbEmpleado.isPresent()) {
-            empleado = dbEmpleado.get();
-            empleado.setNombreEmpleado(empleado.getNombreEmpleado());
-            empleado.setCorreoEmpleado(empleado.getCorreoEmpleado());
-            empleado.setRolEmpleado(empleado.getRolEmpleado());
-            empleado.setEmpresa(empleado.getEmpresa());
-            this.empleadoRepositorio.save(empleado);
-            return empleado;
 
         }
-        return null;
-    }
 
     @Override
     public boolean deleteEmpleado(Long id) throws Exception {
